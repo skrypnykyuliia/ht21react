@@ -1,0 +1,9 @@
+/* src/styles/Result.module.css */
+
+.resultContainer {
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #9dc7dd, #491336);
+    color: white;
+    border-radius: 10px;
+  }

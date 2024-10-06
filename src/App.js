@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { submitAnswers } from "./features/questionnaire/questionnaireSlice";
+import Question from "./components/Question";
+import Result from "./components/Result";
+import styles from "./styles/App.module.css";
 
 function App() {
+  const dispatch = useDispatch();
+  const { questions, submitted } = useSelector((state) => state.questionnaire);
+
+  const handleSubmit = () => {
+    dispatch(submitAnswers());
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.appContainer}>
+      <h1>Анкета</h1>
+      {!submitted ? (
+        <div>
+          {questions.map((q) => (
+            <Question key={q.id} {...q} />
+          ))}
+          <button onClick={handleSubmit} className={styles.submitButton}>
+            Отправить
+          </button>
+        </div>
+      ) : (
+        <Result />
+      )}
     </div>
   );
 }

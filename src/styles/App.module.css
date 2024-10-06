@@ -1,0 +1,23 @@
+/* src/styles/App.module.css */
+
+.appContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .submitButton {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #5602cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #8c68e6;
+  }

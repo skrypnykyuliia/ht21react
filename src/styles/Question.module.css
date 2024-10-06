@@ -1,0 +1,28 @@
+/* src/styles/Question.module.css */
+
+.questionContainer {
+    margin: 20px 0;
+  }
+  
+  .options {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .optionButton {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #687fe8;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .optionButton:hover {
+    background-color: #077c7e;
+  }
+  
+  .selected {
+    background-color: #450844;
+  }
